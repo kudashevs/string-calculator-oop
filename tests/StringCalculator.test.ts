@@ -15,4 +15,8 @@ describe('StringCalculator test suite', () => {
   it('should handle a many digits number', () => {
     expect(calculator.add('42')).toBe(42);
   });
+
+  it('should handle a multi number string', () => {
+    expect(calculator.add('1,2')).toBe(3);
+  });
 });

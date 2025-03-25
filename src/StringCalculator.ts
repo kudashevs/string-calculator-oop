@@ -1,7 +1,11 @@
 export class StringCalculator {
   add(numbers: string): number {
     if (numbers.length > 0) {
-      return parseInt(numbers);
+      const individualNumbers = numbers
+        .split(',')
+        .map(n => parseInt(n));
+
+      return individualNumbers.reduce((result, n) => result + n);
     }
 
     return 0;
