@@ -16,7 +16,11 @@ describe('StringCalculator test suite', () => {
     expect(calculator.add('42')).toBe(42);
   });
 
-  it('should handle a multi number string', () => {
+  it('should handle a two numbers string', () => {
     expect(calculator.add('1,2')).toBe(3);
+  });
+
+  it('should handle a multiple numbers string', () => {
+    expect(calculator.add('1,2,3')).toBe(6);
   });
 });
