@@ -4,8 +4,15 @@ export class StringCalculator {
       return 0;
     }
 
+    let delimiter: string = '[,\n]';
+    if (numbers.startsWith('//')) {
+      const parts = numbers.split('\n');
+      delimiter = parts[0].substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      numbers = parts[1];
+    }
+
     const individualNumbers = numbers
-      .split(/[,\n]/)
+      .split(new RegExp(delimiter))
       .map(n => parseInt(n));
 
     return individualNumbers.reduce((result, n) => result + n);

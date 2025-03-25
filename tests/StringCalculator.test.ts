@@ -31,4 +31,8 @@ describe('StringCalculator test suite', () => {
   it('should handle both separators', () => {
     expect(calculator.add('1,2\n3')).toBe(6);
   });
+
+  it('should support a custom delimiter', () => {
+    expect(calculator.add('//;\n1;2')).toBe(3);
+  });
 });
