@@ -23,4 +23,12 @@ describe('StringCalculator test suite', () => {
   it('should handle a multiple numbers string', () => {
     expect(calculator.add('1,2,3')).toBe(6);
   });
+
+  it('should handle a new line as a separator', () => {
+    expect(calculator.add('1\n2')).toBe(3);
+  });
+
+  it('should handle both separators', () => {
+    expect(calculator.add('1,2\n3')).toBe(6);
+  });
 });
