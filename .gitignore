@@ -1,0 +1,13 @@
+.idea/
+.fleet/
+.vscode/
+/build/
+/coverage/
+/node_modules/
+.eslintcache
+bun.lock
+package-lock.json
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

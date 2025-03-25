@@ -1,0 +1,30 @@
+{
+  "name": "string-calculator-oop",
+  "version": "1.0.0",
+  "description": "An object-oriented implementation of the string calculator kata.",
+  "type": "module",
+  "main": "src/StringCalculator.ts",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sergey Kudashev",
+      "email": "kudashevs@gmail.com",
+      "homepage": "https://kudashevs.com",
+      "role": "developer"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.0",
+    "vitest": "^2.1.8"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint --cache ."
+  }
+}
