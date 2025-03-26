@@ -38,6 +38,7 @@ export class StringCalculator {
   }
 
   private sum(): number {
+    // the validation is hidden
     this.validate(this.numbers);
 
     return this.numbers.reduce((result, n) => result + n);
