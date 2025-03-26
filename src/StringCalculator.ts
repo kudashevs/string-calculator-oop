@@ -38,6 +38,16 @@ export class StringCalculator {
   }
 
   private sum(): number {
+    this.validate(this.numbers);
+
     return this.numbers.reduce((result, n) => result + n);
+  }
+
+  private validate(numbers: number[]): void {
+    numbers.forEach((n) => {
+      if (n < 0) {
+        throw new Error(`negatives not allowed: ${n}`);
+      }
+    });
   }
 }

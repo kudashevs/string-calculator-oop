@@ -35,4 +35,8 @@ describe('StringCalculator test suite', () => {
   it('should support a custom delimiter', () => {
     expect(calculator.add('//;\n1;2')).toBe(3);
   });
+
+  it('should reject a negative number', () => {
+    expect(() => calculator.add('-1')).toThrowError(/-1/);
+  });
 });
