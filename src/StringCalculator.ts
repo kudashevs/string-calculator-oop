@@ -3,12 +3,15 @@ export class StringCalculator {
   private numbers: number[];
 
   add(numbers: string): number {
+    // wrong abstraction level
     if (this.isEmpty(numbers)) {
       return 0;
     }
 
+    // hard to control the result and debug
     this.parseInput(numbers);
 
+    // the source of data is not very obvious
     return this.sum();
   }
 
