@@ -3,13 +3,17 @@ export class StringCalculator {
   private numbers: number[];
 
   add(numbers: string): number {
-    if (numbers.length === 0) {
+    if (this.isEmpty(numbers)) {
       return 0;
     }
 
     this.parseInput(numbers);
 
     return this.sum();
+  }
+
+  private isEmpty(input: string) {
+    return input.length === 0;
   }
 
   private parseInput(input: string): void {
