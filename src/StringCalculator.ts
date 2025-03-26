@@ -11,10 +11,14 @@ export class StringCalculator {
       numbers = parts[1];
     }
 
-    const individualNumbers = numbers
-      .split(new RegExp(delimiter))
-      .map(n => parseInt(n));
+    const individualNumbers = this.prepareNumbers(numbers, delimiter);
 
     return individualNumbers.reduce((result, n) => result + n);
+  }
+
+  private prepareNumbers(input: string, delimiter: string): number[] {
+    return input
+      .split(new RegExp(delimiter))
+      .map(n => parseInt(n));
   }
 }
