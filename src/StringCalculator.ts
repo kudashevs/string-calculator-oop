@@ -41,7 +41,9 @@ export class StringCalculator {
     // the validation is hidden
     this.validate(this.numbers);
 
-    return this.numbers.reduce((result, n) => result + n);
+    const filtered = this.filterNumbers();
+
+    return filtered.reduce((result, n) => result + n);
   }
 
   private validate(numbers: number[]): void {
@@ -50,5 +52,9 @@ export class StringCalculator {
     if (invalidNumbers.length > 0) {
       throw new Error(`negatives not allowed: ${invalidNumbers.join(',')}`);
     }
+  }
+
+  private filterNumbers() {
+    return this.numbers.filter((n) => n <= 1000);
   }
 }
