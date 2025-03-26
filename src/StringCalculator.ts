@@ -3,15 +3,15 @@ export class StringCalculator {
   private numbers: number[];
 
   add(numbers: string): number {
-    // wrong abstraction level
+    // @note a wrong level of abstraction
     if (this.isEmpty(numbers)) {
       return 0;
     }
 
-    // hard to control the result and debug
+    // @note hard to follow, debug and control the result
     this.parseInput(numbers);
 
-    // the source of data is not very obvious
+    // @note the source of data and operations on it are not very obvious
     return this.sum();
   }
 
@@ -37,10 +37,12 @@ export class StringCalculator {
       .map(n => parseInt(n));
   }
 
+  // @note the method has too many responsibilities
   private sum(): number {
-    // the validation is hidden
+    // @note the validation behavior is hidden
     this.validate(this.numbers);
 
+    // @note the filtering behavior is hidden
     const filtered = this.filterNumbers();
 
     return filtered.reduce((result, n) => result + n);
