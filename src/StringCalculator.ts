@@ -9,7 +9,7 @@ export class StringCalculator {
 
     this.parseInput(numbers);
 
-    return this.numbers.reduce((result, n) => result + n);
+    return this.sum();
   }
 
   private parseInput(input: string): void {
@@ -28,5 +28,9 @@ export class StringCalculator {
     return input
       .split(new RegExp(this.delimiters))
       .map(n => parseInt(n));
+  }
+
+  private sum(): number {
+    return this.numbers.reduce((result, n) => result + n);
   }
 }
