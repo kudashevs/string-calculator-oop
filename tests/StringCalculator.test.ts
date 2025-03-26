@@ -39,4 +39,8 @@ describe('StringCalculator test suite', () => {
   it('should reject a negative number', () => {
     expect(() => calculator.add('-1')).toThrowError(/-1/);
   });
+
+  it('should reject multiple negative numbers', () => {
+    expect(() => calculator.add('-1,3,-2')).toThrowError(/-1,-2/);
+  });
 });
