@@ -1,4 +1,6 @@
 export class StringCalculator {
+  static readonly VALIDATION_MESSAGE = 'negatives not allowed';
+
   add(numbers: string): number {
     // @note a wrong level of abstraction
     if (this.isEmpty(numbers)) {
@@ -34,7 +36,7 @@ export class StringCalculator {
     const invalidNumbers: number[] = numbers.filter((n) => n < 0);
 
     if (invalidNumbers.length > 0) {
-      throw new Error(`negatives not allowed: ${invalidNumbers.join(',')}`);
+      throw new Error(StringCalculator.VALIDATION_MESSAGE + ': ' + invalidNumbers.join(','));
     }
   }
 
