@@ -11,7 +11,9 @@ export class StringCalculator {
 
     this.validate(individualNumbers);
 
-    return this.sum(individualNumbers);
+    const filteredNumbers = this.filterNumbers(individualNumbers);
+
+    return this.sum(filteredNumbers);
   }
 
   private isEmpty(input: string) {
@@ -38,6 +40,10 @@ export class StringCalculator {
     if (invalidNumbers.length > 0) {
       throw new Error(StringCalculator.VALIDATION_MESSAGE + ': ' + invalidNumbers.join(','));
     }
+  }
+
+  private filterNumbers(numbers: number[]) {
+    return numbers.filter((n) => n <= 1000);
   }
 
   private sum(numbers: number[]): number {
