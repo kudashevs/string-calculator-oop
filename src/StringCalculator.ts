@@ -38,7 +38,10 @@ export class StringCalculator {
       delimiters = delimiters.substring(1, delimiters.length - 1);
     }
 
-    return delimiters.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return delimiters
+      .split('][')
+      .map(d => d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+      .join('|');
   }
 
   private prepareNumbers(input: string): number[] {
