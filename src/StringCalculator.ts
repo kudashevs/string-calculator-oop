@@ -1,12 +1,16 @@
 export class StringCalculator {
   add(numbers: string): number {
-    if (numbers.length === 0) {
+    if (this.isEmpty(numbers)) {
       return 0;
     }
 
     const individualNumbers = this.parseNumbers(numbers);
 
     return this.sum(individualNumbers);
+  }
+
+  private isEmpty(input: string) {
+    return input.length === 0;
   }
 
   private parseNumbers(input: string): number[] {
