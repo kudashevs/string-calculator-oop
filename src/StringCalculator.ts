@@ -1,5 +1,6 @@
 export class StringCalculator {
   add(numbers: string): number {
+    // @note a wrong level of abstraction
     if (this.isEmpty(numbers)) {
       return 0;
     }
