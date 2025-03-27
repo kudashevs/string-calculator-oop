@@ -9,8 +9,10 @@ export class StringCalculator {
 
     const individualNumbers = this.parseNumbers(numbers);
 
+    // @note the validation behavior is non-hidden
     this.validate(individualNumbers);
 
+    // @note the filtering behavior is non-hidden
     const filteredNumbers = this.filterNumbers(individualNumbers);
 
     return this.sum(filteredNumbers);
