@@ -36,6 +36,10 @@ describe('StringCalculator test suite', () => {
     expect(calculator.add('//;\n1;2')).toBe(3);
   });
 
+  it('should support a match-like custom delimiter', () => {
+    expect(calculator.add('//.\n1.2.3')).toBe(6);
+  });
+
   it('should reject a negative number', () => {
     expect(() => calculator.add('-1')).toThrowError(/-1/);
   });
@@ -50,5 +54,9 @@ describe('StringCalculator test suite', () => {
 
   it('should ignore numbers greater then 1000', () => {
     expect(calculator.add('//;\n1001;2')).toBe(2);
+  });
+
+  it('should support a custom delimiter of any length', () => {
+    expect(calculator.add('//[***]\n1***2***3')).toBe(6);
   });
 });
