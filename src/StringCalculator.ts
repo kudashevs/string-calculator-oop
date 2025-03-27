@@ -6,7 +6,7 @@ export class StringCalculator {
 
     const individualNumbers = this.parseNumbers(numbers);
 
-    return individualNumbers.reduce((result, n) => result + n);
+    return this.sum(individualNumbers);
   }
 
   private parseNumbers(input: string): number[] {
@@ -21,5 +21,9 @@ export class StringCalculator {
     return rest
       .split(new RegExp(delimiters))
       .map(n => parseInt(n));
+  }
+
+  private sum(numbers: number[]): number {
+    return numbers.reduce((result, n) => result + n);
   }
 }
