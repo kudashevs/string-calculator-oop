@@ -7,6 +7,8 @@ export class StringCalculator {
 
     const individualNumbers = this.parseNumbers(numbers);
 
+    this.validate(individualNumbers);
+
     return this.sum(individualNumbers);
   }
 
@@ -26,6 +28,14 @@ export class StringCalculator {
     return rest
       .split(new RegExp(delimiters))
       .map(n => parseInt(n));
+  }
+
+  private validate(numbers: number[]): void {
+    numbers.forEach((n) => {
+      if (n < 0) {
+        throw new Error(`negatives not allowed: ${n}`);
+      }
+    });
   }
 
   private sum(numbers: number[]): number {
