@@ -50,7 +50,7 @@ export class StringCalculator {
   // @note the method has too many responsibilities
   private sum(): number {
     // @note the validation behavior is hidden
-    this.validate(this.numbers);
+    this.validateNumbers();
 
     // @note the filtering behavior is hidden
     const filtered = this.filterNumbers();
@@ -58,8 +58,8 @@ export class StringCalculator {
     return filtered.reduce((result, n) => result + n);
   }
 
-  private validate(numbers: number[]): void {
-    const invalidNumbers: number[] = numbers.filter((n) => n < 0);
+  private validateNumbers(): void {
+    const invalidNumbers: number[] = this.numbers.filter((n) => n < 0);
 
     if (invalidNumbers.length > 0) {
       throw new Error(`negatives not allowed: ${invalidNumbers.join(',')}`);
