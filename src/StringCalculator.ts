@@ -27,13 +27,17 @@ export class StringCalculator {
     let rest = input;
     if (input.startsWith('//')) {
       const parts = input.split('\n');
-      delimiters = parts[0].substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      delimiters = this.prepareDelimiters(parts[0]);
       rest = parts[1];
     }
 
     return rest
       .split(new RegExp(delimiters))
       .map(n => parseInt(n));
+  }
+
+  private prepareDelimiters(input: string): string {
+    return input.substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
   private validate(numbers: number[]): void {
