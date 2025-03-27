@@ -23,12 +23,16 @@ export class StringCalculator {
     if (input.startsWith('//')) {
       const parts = input.split('\n');
 
-      this.delimiters = parts[0].substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      this.delimiters = this.prepareDelimiters(parts[0]);
       this.numbers = this.prepareNumbers(parts[1]);
     } else {
       this.delimiters = '[,\n]';
       this.numbers = this.prepareNumbers(input);
     }
+  }
+
+  private prepareDelimiters(input: string): string {
+    return input.substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
   private prepareNumbers(input: string): number[] {
