@@ -20,6 +20,14 @@ export abstract class SmartString {
     }
   }
 
+  protected validate(numbers: number[]): void {
+    numbers.forEach((n) => {
+      if (n < 0) {
+        throw new Error(`negatives not allowed: ${n}`);
+      }
+    });
+  }
+
   sum(): number {
     const numbers = this.parse();
 

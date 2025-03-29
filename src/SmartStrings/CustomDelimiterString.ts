@@ -6,8 +6,12 @@ export class CustomDelimiterString extends SmartString {
     const delimiter = parts[0].substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const input = parts[1];
 
-    return input
+    const numbers = input
       .split(new RegExp(delimiter))
       .map(n => parseInt(n));
+
+    this.validate(numbers);
+
+    return numbers;
   }
 }
