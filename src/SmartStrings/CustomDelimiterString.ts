@@ -16,6 +16,12 @@ export class CustomDelimiterString extends SmartString {
   }
 
   private prepareDelimiters(input: string): string {
-    return input.substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    let delimiters = input.substring(2);
+
+    if (delimiters.startsWith('[')) {
+      delimiters = delimiters.substring(1, delimiters.length - 1);
+    }
+
+    return delimiters.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 }
