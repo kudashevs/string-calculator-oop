@@ -20,6 +20,7 @@ export abstract class SmartString {
     }
   }
 
+  // @note we have to make sure that derivatives uses it
   protected validate(numbers: number[]): void {
     numbers.forEach((n) => {
       const invalidNumbers: number[] = numbers.filter((n) => n < 0);
