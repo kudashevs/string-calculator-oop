@@ -71,4 +71,8 @@ describe('StringCalculator test suite', () => {
   it('should support multiple custom delimiters', () => {
     expect(calculator.add('//[*][%]\n1*2%3')).toBe(6);
   });
+
+  it('should support multiple custom delimiters of any length', () => {
+    expect(calculator.add('//[***][-][.]\n1.2-3***4')).toBe(10);
+  });
 });
