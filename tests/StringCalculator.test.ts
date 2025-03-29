@@ -47,4 +47,12 @@ describe('StringCalculator test suite', () => {
   it('should reject a negative with a custom delimiter', () => {
     expect(() => calculator.add('//;\n-1;2')).toThrowError(/-1/);
   });
+
+  it('should reject multiple negative numbers', () => {
+    expect(() => calculator.add('-1,3,-2')).toThrowError(/-1,-2/);
+  });
+
+  it('should reject multiple negative with a custom delimiter', () => {
+    expect(() => calculator.add('//;\n-1;3;-2')).toThrowError(/-1,-2/);
+  });
 });

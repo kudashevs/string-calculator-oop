@@ -22,8 +22,10 @@ export abstract class SmartString {
 
   protected validate(numbers: number[]): void {
     numbers.forEach((n) => {
-      if (n < 0) {
-        throw new Error(`negatives not allowed: ${n}`);
+      const invalidNumbers: number[] = numbers.filter((n) => n < 0);
+
+      if (invalidNumbers.length > 0) {
+        throw new Error(`negatives not allowed: ${invalidNumbers.join(',')}`);
       }
     });
   }
