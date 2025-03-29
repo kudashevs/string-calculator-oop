@@ -33,6 +33,7 @@ export abstract class SmartString {
     });
   }
 
+  // @note the method has too many responsibilities
   sum(): number {
     const numbers = this.parse();
 
