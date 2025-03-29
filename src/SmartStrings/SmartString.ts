@@ -1,6 +1,8 @@
 import {CustomDelimiterString, DefaultDelimiterString, EmptyString} from './../internal';
 
 export abstract class SmartString {
+  static readonly VALIDATION_MESSAGE = 'negatives not allowed';
+
   protected readonly input: string;
 
   constructor(input: string) {
@@ -26,7 +28,7 @@ export abstract class SmartString {
       const invalidNumbers: number[] = numbers.filter((n) => n < 0);
 
       if (invalidNumbers.length > 0) {
-        throw new Error(`negatives not allowed: ${invalidNumbers.join(',')}`);
+        throw new Error(SmartString.VALIDATION_MESSAGE + ': ' + invalidNumbers.join(','));
       }
     });
   }
