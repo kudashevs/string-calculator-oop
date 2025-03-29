@@ -36,7 +36,9 @@ export abstract class SmartString {
   sum(): number {
     const numbers = this.parse();
 
-    return numbers.reduce((acc, n) => acc + n, 0);
+    const filtered = numbers.filter((n) => n <= 1000);
+
+    return filtered.reduce((acc, n) => acc + n, 0);
   };
 
   abstract parse(): number[];

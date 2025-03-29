@@ -55,4 +55,12 @@ describe('StringCalculator test suite', () => {
   it('should reject multiple negative with a custom delimiter', () => {
     expect(() => calculator.add('//;\n-1;3;-2')).toThrowError(/-1,-2/);
   });
+
+  it('should not ignore number equal to 1000', () => {
+    expect(calculator.add('//;\n1000;2')).toBe(1002);
+  });
+
+  it('should ignore numbers greater then 1000', () => {
+    expect(calculator.add('//;\n1001;2')).toBe(2);
+  });
 });
