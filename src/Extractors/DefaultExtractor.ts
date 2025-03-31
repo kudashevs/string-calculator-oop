@@ -2,7 +2,7 @@ import {Extractor} from './Extractor';
 
 export class DefaultExtractor implements Extractor {
   extract(input: string): number[] {
-    if (input.length === 0) {
+    if (this.isEmpty(input)) {
       return [];
     }
 
@@ -17,5 +17,9 @@ export class DefaultExtractor implements Extractor {
     return rest
       .split(new RegExp(delimiters))
       .map(n => parseInt(n));
+  }
+
+  private isEmpty(input: string) {
+    return input.length === 0;
   }
 }
