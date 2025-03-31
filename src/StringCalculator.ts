@@ -17,10 +17,13 @@ export class StringCalculator {
   }
 
   add(numbers: string): number {
+    // @note it does not reflect the empty string requirement
     const individualNumbers = this.extractor.extract(numbers);
 
+    // @note the validation behavior is non-hidden
     this.validator.validate(individualNumbers);
 
+    // @note the filtering behavior is non-hidden
     const filteredNumbers = this.limiter.limit(individualNumbers);
 
     return this.sum(filteredNumbers);
