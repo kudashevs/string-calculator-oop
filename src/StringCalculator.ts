@@ -11,6 +11,10 @@ export class StringCalculator {
   add(numbers: string): number {
     const individualNumbers = this.extractor.extract(numbers);
 
-    return individualNumbers.reduce((result, n) => result + n, 0);
+    return this.sum(individualNumbers);
+  }
+
+  private sum(numbers: number[]): number {
+    return numbers.reduce((result, n) => result + n, 0);
   }
 }
