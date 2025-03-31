@@ -35,4 +35,8 @@ describe('StringCalculator test suite', () => {
   it('should support a custom delimiter', () => {
     expect(calculator.add('//;\n1;2')).toBe(3);
   });
+
+  it('should support a match-like custom delimiter', () => {
+    expect(calculator.add('//.\n1.2.3')).toBe(6);
+  });
 });
