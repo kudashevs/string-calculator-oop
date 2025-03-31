@@ -10,7 +10,7 @@ export class DefaultExtractor implements Extractor {
     let rest = input;
     if (input.startsWith('//')) {
       const parts = input.split('\n');
-      delimiters = parts[0].substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      delimiters = this.prepareDelimiters(parts[0]);
       rest = parts[1];
     }
 
@@ -21,5 +21,9 @@ export class DefaultExtractor implements Extractor {
 
   private isEmpty(input: string) {
     return input.length === 0;
+  }
+
+  private prepareDelimiters(input: string): string {
+    return input.substring(2).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 }
