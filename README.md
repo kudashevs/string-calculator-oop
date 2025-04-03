@@ -3,6 +3,8 @@ String Calculator kata (Object-Oriented implementation)
 
 This is an object-oriented implementation of the String Calculator kata.
 
+***Spoiler alert*** If you have never done this kata before, please try to do it before looking at the implementations in the repo.
+Otherwise, it won’t be interesting and beneficial.
 
 ## Kata's description
 
