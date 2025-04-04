@@ -59,6 +59,17 @@ Allow multiple delimiters like this: `"//[delim1][delim2]\n"` for example "//[*]
 ### Step 9
 Make sure you can also handle multiple delimiters with length longer than one char.
 
+### Step 10 (optional)
+Look at the code once again and reflect on the end result. Try to ask these questions:
+* Why the code is structured in this way? What are the pros and cons of the implementation?
+* Are you happy with the implementation? Which parts of the implementation you don't like?
+* Does the code comply with the general programming principles (Separation of Concerns, DRY, KISS)?
+* Does the code comply with the object-oriented principles (GRASP, SOLID, especially the SRP and OCP)?
+* What happens if a new string format is required?
+* What happens if the requirements changes in ... (business logic, extraction, validation, filtering)?
+* Which parts of the implementation can be improved? How? Why this is an improvement?
+* Use AI if you are up to.
+
 
 ## Credits
 
