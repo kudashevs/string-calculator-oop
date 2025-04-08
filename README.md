@@ -1,10 +1,18 @@
 String Calculator kata (Object-Oriented implementation)
 ==========================
 
-This is an object-oriented implementation of the String Calculator kata.
+This is a repo with different object-oriented solutions of the String Calculator kata.
 
-***Spoiler alert*** If you have never done this kata before, please try to do it before looking at the implementations in the repo.
-Otherwise, it won’t be interesting and beneficial.
+***Spoiler alert*** If you have never done this kata before, please try to solve it before looking at the solutions in the repo.
+Otherwise, the kata won’t be interesting and beneficial.
+
+The repo consists of a master branch and four different branches for each solution. All the branches stem from master
+(they stem from the 4th step where the important design decision was made). These are the branches:
+- [a single unit of work with state](../../tree/single-unit-with-state) ([a related article](https://kudashevs.com/posts/2025/04/string-calculator-kata-single-unit-with-state))
+- [a single unit of work without state](../../tree/single-unit-no-state) ([a related article](https://kudashevs.com/posts/2025/04/string-calculator-kata-single-unit-no-state))
+- [a bundle of entities](../../tree/collaboration-of-entities) ([a related article](https://kudashevs.com/posts/2025/04/string-calculator-kata-collaboration-of-entities))
+- [a bundle of behavior](../../tree/collaboration-of-behavior) ([a related article](https://kudashevs.com/posts/2025/04/string-calculator-kata-collaboration-of-behavior))
+
 
 ## Kata's description
 
